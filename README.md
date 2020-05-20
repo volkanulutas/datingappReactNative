@@ -15,43 +15,91 @@
   </a>
 </p>
 
-> Clean and minimalist React Native template for a quick start with TypeScript.
+# datingapp-react-native
+# Ön Kurulumlar
+1.) React Native Kurulumu [Windows](https://medium.com/mol42/windows-%C3%BCzerinde-react-native-kurulumu-4de15e0e33b9) | [MacOS](https://medium.com/mol42/macos-%C3%BCzerinde-react-native-kurulumu-71d4f96c282e) | [Linux](https://medium.com/mol42/linux-%C3%BCzerinde-react-native-kurulumu-a61b54927941)
 
-## :star: Features
+# React Native Getting Started (Örnek Çalışmalar)
+1. [DevNot-React Native Giriş Video Eğitim](https://youtu.be/nLzbzgWflxU)
+  1-a) [Blog olarak anlatımı](https://github.com/ozcanzaferayan/react-native-instagram-blog)
+2. [Haber Örnek Uygulaması](http://devnot.com/2019/react-native-ve-hooks-ile-haber-uygulamasi-yapimi-bolum-1/)
+3. [Cupertino tasarımı ile yapılan React Native IOS Whatsapp Uygulaması](https://github.com/ozcanzaferayan/react-native-whatsapp-ios)
+4. [Meterial UI tasarımı ile yapılan React Native Android Whatsapp Uygulaması](https://github.com/ozcanzaferayan/react-native-whatsapp-material)
+5. [Tüm Örnekler](https://github.com/ozcanzaferayan?tab=repositories)
 
-- Elegant usage directly within the [React Native CLI](https://github.com/react-native-community/cli)
-- Consistent with the default React Native template
-- Minimal additional dependencies
-
-## :arrow_forward: Usage
-
-### Note on the legacy CLI
-There seems to be quite some confusion about the legacy CLI. This template only works with the new CLI. Make sure you have uninstalled the legacy `react-native-cli` first (`npm uninstall -g react-native-cli`), for the below command to work. If you wish to not use `npx`, you can also install the new CLI globally (`npm i -g @react-native-community/cli` or `yarn global add @react-native-community/cli`).
-
-Further information can be found here: https://github.com/react-native-community/cli#about
-
-### `react-native@0.62.0` or higher
+# Notlar
+1. Aşağıdaki komut ile projeyi başlatmayı unutmayınız.
 
 ```sh
-npx react-native init MyApp --template react-native-template-typescript
+react-native init MyAwesomeProject --template typescript 
 ```
 
-### `react-native@0.61.x`
+# Kurulum
+
+1. Repoyu bilgisayara alalım:
 
 ```sh
-npx react-native init MyApp --template react-native-template-typescript@6.3.16
+git clone https://github.com/volkanulutas/datingapp-react-native.git
 ```
 
-### `react-native@0.60.x`
+2. Aşağıdaki dependency'leri kuralım:
 
 ```sh
-npx react-native init MyApp --template react-native-template-typescript@6.2.0
+cd datingapp-react-native
+npm install
+cd ios
+pod install 
+```
+3. Ek olarak "navigation" modülü için kurulum yapalım. İşletim sistemleri için: [Ref:](https://reactnavigation.org/docs/getting-started)
+
+Ana dizine gelelim.
+
+1.)
+
+```sh
+yarn add @react-navigation/native
+yarn add @react-navigation/stack
+yarn add @react-navigation/bottom-tabs
 ```
 
-## :computer: Contributing
+veya
+```sh
+npm install @react-navigation/native
+npm install @react-navigation/stack
+npm install @react-navigation/bottom-tabs
+```
 
-Contributions are very welcome. Please check out the [contributing document](CONTRIBUTING.md).
+2.)
 
-## :bookmark: License
+```sh
+yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+veya
+```sh
+npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+3.)
 
-This project is [MIT](LICENSE) licensed.
+```sh
+yarn add react-native-gesture-handler
+```
+veya
+```sh
+npm install react-native-gesture-handler
+```
+4.) 
+
+
+```sh
+cd ios
+pod install
+cd ..
+react-native link
+```
+4. Kurulumu tamamladık, projeyi emulator veya telefonda çalıştıralım:
+
+```sh
+react-native run-ios
+react-native run-android
+```
+
